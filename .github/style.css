@@ -1,0 +1,51 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+.top-nav-bar {
+  position: sticky;
+  top: 0;
+  display: flex;
+  padding: 20px;
+  border: 3px solid red;
+}
+
+.nav-text-menu {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav-icons-menu {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+h1 {
+  font-size: 7rem;
+  font-family: "Lavishly Yours", cursive;
+  font-weight: bold;
+  margin-bottom: 60px;
+}
+
+nav ul li {
+  padding: 30px;
+  display: inline;
+}
+
+.nav-icons-menu nav ul li {
+  padding: 15px;
+}
+
+nav ul li a {
+  list-style-type: none;
+  text-decoration: none;
+  font-size: 2.5rem;
+}
