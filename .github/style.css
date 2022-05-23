@@ -6,46 +6,151 @@
 html {
   font-size: 62.5%;
 }
-
-.top-nav-bar {
+body {
+  background-color: rgb(250, 218, 175);
+}
+header {
+  width: 100%;
   position: sticky;
   top: 0;
-  display: flex;
-  padding: 20px;
-  border: 3px solid red;
 }
 
-.nav-text-menu {
+/* styles for nav h1 */
+.nav-h1 {
+  font-size: 7rem;
+  font-family: "Lavishly Yours", cursive;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+/* styles for top nav bar */
+.top-nav-bar {
+  display: flex;
+  background-color: #fff;
+}
+
+/* atyles for text from navigation  */
+
+.div-text-menu {
   display: flex;
   flex: 1;
   align-items: center;
   justify-content: center;
 }
 
-.nav-icons-menu {
+/* styles for icon from navigation  */
+.div-icons-menu {
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-h1 {
-  font-size: 7rem;
-  font-family: "Lavishly Yours", cursive;
-  font-weight: bold;
-  margin-bottom: 60px;
-}
+/* styles for navigation bar */
 
-nav ul li {
-  padding: 30px;
+.div-text-menu nav ul li {
+  padding: 10px;
   display: inline;
 }
 
-.nav-icons-menu nav ul li {
-  padding: 15px;
-}
-
-nav ul li a {
+.div-text-menu ul li a {
   list-style-type: none;
   text-decoration: none;
-  font-size: 2.5rem;
+  font-size: 2rem;
+  color: black;
+  transition: opacity 300ms ease-in;
+}
+.div-text-menu nav ul li a:hover {
+  border-bottom: 6px rgb(249, 12, 194) solid;
+  box-shadow: 0px 0px 10px rgb(20, 19, 19);
+  color: rgb(222, 25, 173);
+  opacity: 0.6;
+}
+
+.div-icons-menu nav ul li {
+  padding: 10px;
+  display: inline;
+  overflow: hidden;
+  transition: opacity 1s ease-in;
+}
+.nav-icons ul li :hover .material-icons {
+  color: rgb(251, 251, 254);
+  background-color: rgb(249, 12, 194);
+  opacity: 0.2;
+}
+
+/* styles for main containor */
+
+/* styles for main container img section  */
+
+.main-container-img {
+  display: block;
+  background-image: url(../images/sweetBg.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 100px;
+  overflow: hidden;
+}
+
+/* styles for main containar h1  */
+.main-container-h1 {
+  font-size: 4rem;
+  font-family: "Times New Roman", Times, serif;
+}
+
+/* styles for paragraph */
+
+.para-style {
+  font-size: 2rem;
+}
+
+/* styles for butons */
+
+.button {
+  color: rgb(17, 17, 17);
+  font-size: 2rem;
+  margin: 10px 0;
+  padding: 5px;
+  background-color: rgb(250, 71, 71);
+  border: 3px rgb(17, 17, 17) solid;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+.button:hover {
+  color: #fff;
+  background-color: rgb(17, 17, 17);
+}
+
+/* styles for items section */
+.items-section {
+  display: flex;
+  justify-content: center;
+  margin: 1.5rem;
+  padding: 0 90px;
+  flex-wrap: wrap;
+}
+
+.div-styles {
+  background-color: #e1fcf4;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  width: 200px;
+  flex-direction: column;
+  margin: 10px;
+  padding: 20px;
+  line-height: 2rem;
+}
+
+.item-7,
+.item-8 {
+  display: flex;
+  flex-grow: 1;
+}
+
+@media (max-width: 767px) {
+  .main-container {
+    display: flex;
+    flex-direction: column;
+  }
 }
