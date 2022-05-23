@@ -25,44 +25,113 @@ header {
 /* styles for top nav bar */
 .top-nav-bar {
   display: flex;
-  background-color: #fff;
-}
-
-/* atyles for text from navigation  */
-
-.div-text-menu {
-  display: flex;
-  flex: 1;
+  flex-direction: row;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
+  background: linear-gradient(to left, #f7c1b2, #fddbac);
+  color: rgb(116, 111, 78);
+  height: 80px;
+  padding: 1em;
 }
+
+/* styles for text from navigation  */
+
+.ul-text {
+  display: flex;
+  flex-direction: row;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* styles for navigation bar */
+
+.ul-text > li {
+  margin: 0 1rem;
+  overflow: hidden;
+}
+
+.ul-text li a {
+  text-decoration: none;
+  font-size: 2rem;
+  color: rgb(12, 12, 12);
+  transition: opacity 300ms ease-in;
+}
+.ul-text li a:hover {
+  border-bottom: 6px rgb(124, 6, 97) solid;
+  color: rgb(222, 25, 173);
+  opacity: 0.6;
+}
+
+/* styles for toggle button */
+.toggle-button-container {
+  display: none;
+  height: 100%;
+  width: 30px;
+  cursor: pointer;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* last work */
+.top-nav-bar .toggle-button-container {
+  border: 3px red solid;
+  right: 10px;
+  width: 100px;
+}
+/* end */
+
+#menu-toggle {
+  display: none;
+}
+
+/* styles for Hamburger Menu */
+/* .top-nav-bar, */
+
+.toggle-button,
+.toggle-button::before,
+.toggle-button::after {
+  display: block;
+  background-color: rgb(222, 17, 17);
+  position: absolute;
+  height: 4px;
+  width: 30px;
+  transition: transform 400ms cubic-bezier(0.23, 1, 0.32, 1);
+  border-radius: 2px;
+}
+
+.toggle-button::before {
+  content: "";
+  margin-top: -8px;
+}
+
+.toggle-button::after {
+  content: "";
+  margin-top: 8px;
+}
+
+#menu-toggle:checked + .toggle-button-container .toggle-button::before {
+  margin-top: 0px;
+  transform: rotate(405deg);
+}
+
+#menu-toggle:checked + .toggle-button-container .toggle-button {
+  background: rgba(255, 255, 255, 0);
+}
+
+#menu-toggle:checked + .toggle-button-container .toggle-button::after {
+  margin-top: 0px;
+  transform: rotate(-405deg);
+}
+
+/*  */
 
 /* styles for icon from navigation  */
 .div-icons-menu {
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-/* styles for navigation bar */
-
-.div-text-menu nav ul li {
-  padding: 10px;
-  display: inline;
-}
-
-.div-text-menu ul li a {
-  list-style-type: none;
-  text-decoration: none;
-  font-size: 2rem;
-  color: black;
-  transition: opacity 300ms ease-in;
-}
-.div-text-menu nav ul li a:hover {
-  border-bottom: 6px rgb(249, 12, 194) solid;
-  box-shadow: 0px 0px 10px rgb(20, 19, 19);
-  color: rgb(222, 25, 173);
-  opacity: 0.6;
 }
 
 .div-icons-menu nav ul li {
@@ -77,7 +146,7 @@ header {
   opacity: 0.2;
 }
 
-/* styles for main containor */
+/* styles for main container */
 
 /* styles for main container img section  */
 
@@ -91,7 +160,7 @@ header {
   overflow: hidden;
 }
 
-/* styles for main containar h1  */
+/* styles for main container h1  */
 .main-container-h1 {
   font-size: 4rem;
   font-family: "Times New Roman", Times, serif;
@@ -124,10 +193,10 @@ header {
 /* styles for items section */
 .items-section {
   display: flex;
-  justify-content: center;
-  margin: 1.5rem;
-  padding: 0 90px;
   flex-wrap: wrap;
+  align-content: space-between;
+  padding: 40px;
+  justify-content: center;
 }
 
 .div-styles {
@@ -137,20 +206,70 @@ header {
   text-align: center;
   width: 200px;
   flex-direction: column;
-  margin: 10px;
-  padding: 20px;
+  margin: 5px;
+  padding: 30px;
   line-height: 2rem;
 }
 
 .item-7,
 .item-8 {
-  display: flex;
-  flex-grow: 1;
+  flex-basis: 330px;
 }
 
-@media (max-width: 767px) {
+@media screen and (max-width: 966px) {
   .main-container {
-    display: flex;
+    display: block;
     flex-direction: column;
   }
+  .item-7,
+  .item-8 {
+    flex-basis: 200px;
+  }
+
+  /* media for hamburger menu */
+
+  .toggle-button-container {
+    display: flex;
+    /* border: 3px solid blue; */
+  }
+  .div-text-menu .ul-text {
+    position: absolute;
+    top: 50px;
+    margin-top: 50px;
+    left: 0;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+  }
+  #menu-toggle ~ .div-text-menu .ul-text li {
+    height: 0;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
+  }
+  #menu-toggle:checked ~ .div-text-menu .ul-text li {
+    border: 1px solid rgb(253, 219, 119);
+    height: 2.5em;
+    padding: 0.5em;
+    transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
+  }
+  .div-text-menu .ul-text > li {
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0.5em 0;
+    width: 100%;
+    background-color: rgb(84, 82, 82);
+  }
+  .div-text-menu .ul-text > li a {
+    color: rgb(251, 201, 106);
+  }
+
+  .div-text-menu .ul-text > li:not(:last-child) {
+    border-bottom: 1px solid rgb(251, 201, 106);
+  }
 }
+
+/*  */
