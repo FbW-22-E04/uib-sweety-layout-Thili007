@@ -201,7 +201,7 @@ header {
   display: flex;
   align-items: center;
   text-align: center;
-  width: 200px;
+  /* width: 200px; */
   flex-direction: column;
   margin: 5px;
   padding: 30px;
@@ -213,14 +213,26 @@ header {
   flex-basis: 330px;
 }
 
-@media screen and (max-width: 966px) {
-  .main-container {
-    display: block;
-    flex-direction: column;
+@media screen and (min-width: 966px) {
+  .items-section {
+    display: flex;
+    background-color: red;
   }
-  .item-7,
-  .item-8 {
-    flex-basis: 200px;
+
+  .div-styles {
+    flex-basis: 20%;
+    flex-wrap: wrap;
+    flex-grow: 1;
+    border: 2px blue solid;
+  }
+}
+
+@media screen and (max-width: 956px) {
+  .div-styles {
+    flex-basis: 10%;
+    flex-wrap: wrap;
+    flex-grow: 2;
+    border: 2px blue solid;
   }
 
   /* media for hamburger menu */
