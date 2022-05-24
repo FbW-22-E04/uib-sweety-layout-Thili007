@@ -74,13 +74,10 @@ header {
   align-items: center;
 }
 
-/* last work */
-.top-nav-bar .toggle-button-container {
-  border: 3px red solid;
-  right: 10px;
-  width: 100px;
+.top-nav-bar .toggle-button-container .menu-toggle,
+.top-nav-bar .toggle-button-container .toggle-button {
+  right: 180px;
 }
-/* end */
 
 #menu-toggle {
   display: none;
